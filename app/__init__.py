@@ -4,8 +4,8 @@ import os
 
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
-DATABASE = f'sqlite:///{BASEDIR}/data.db'
-SECRET_KEY = 'dev'
+DATABASE = f"sqlite:///{BASEDIR}/data.db"
+SECRET_KEY = "dev"
 
 
 def create_app():
@@ -14,7 +14,7 @@ def create_app():
     inefficient.
     """
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE
-    app.config['SECRET_KEY'] = SECRET_KEY
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE
+    app.config["SECRET_KEY"] = SECRET_KEY
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     return app

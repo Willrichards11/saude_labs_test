@@ -9,14 +9,16 @@ database = SQLAlchemy(app)
 
 class Orders(database.Model):
     """A database model to for the sqlite database orders table """
+
     id = Column(Integer, primary_key=True)
     created_at = Column(String(10))
-    customer_id = Column(Integer, nullable=False)
-    vendor_id = Column(Integer, nullable=False)
+    customer_id = Column(Integer)
+    vendor_id = Column(Integer)
 
 
 class Commissions(database.Model):
     """ A database model to for the sqlite database Commissions table"""
+
     key = Column(Integer, primary_key=True)
     date = Column(String(10))
     rate = Column(Float)
@@ -25,6 +27,7 @@ class Commissions(database.Model):
 
 class ProductPromotions(database.Model):
     """ A database model to for the sqlite database Product_Promotions table"""
+
     key = Column(Integer, primary_key=True)
     date = Column(String(10))
     product_id = Column(Integer)
@@ -33,18 +36,21 @@ class ProductPromotions(database.Model):
 
 class Promotions(database.Model):
     """ A database model to for the sqlite database Promotions table"""
+
     id = Column(Integer, primary_key=True)
     description = Column(String(100))
 
 
 class Products(database.Model):
     """ A database model to for the sqlite database Products table"""
+
     id = Column(Integer, primary_key=True)
     description = Column(String(100))
 
 
 class OrderLines(database.Model):
     """ A database model to for the sqlite database OrderLines table"""
+
     key = Column(Integer, primary_key=True)
     order_id = Column(Integer)
     product_id = Column(Integer)

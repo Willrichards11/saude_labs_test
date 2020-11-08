@@ -7,17 +7,19 @@ from datetime import datetime
 database_session = database.session
 
 
-@app.route('/analytics', methods=['GET'])
+@app.route("/analytics", methods=["GET"])
 def analytics():
     """
-        Endpoint to calculate daily sales analytics for the provided dataset.
+        Endpoint to calculate daily sales analytics for the provided dataset. If the provided date can be mapped to
+        the YYYY-MM-DD format, the data will be processed. Otherwise, the endpoint will return an incorrect date format
+        message.
     """
-    date = request.args.get('date') or '2019-08-01'
+    date = request.args.get("date") or "2019-08-01"
 
     try:
-        datetime.strptime(date, '%Y-%m-%d')
+        datetime.strptime(date, "%Y-%m-%d")
     except ValueError as e:
-        return "Incorrect date format, please use YYYY-MM-DD"
+        return jsonify("Incorrect date format, please use YYYY-MM-DD")
 
     response = get_data(database_session, date)
-    return jsonify(response)
+    return response
