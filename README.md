@@ -1,6 +1,6 @@
 # A Flask application that provides a simple endpoint to query an example database. 
 
-This repository is provided to satisfy the requirements of the Suade Labs job test.
+This repository is provided to satisfy the requirements of the Suade Labs job test. To aid the application, the provided CSV files were mapped to a sqlite database using a python script. This allowed querying from the database using sqlalchemy instead of using a library such as pandas.
 
 
 ## Requirements
