@@ -1,4 +1,4 @@
-# A Flask application that provides a simple endpoint to query an example database. 
+# A simple flask endpoint for the Suade Labs test
 
 This repository is provided to satisfy the requirements of the Suade Labs job test. To aid the application, the provided CSV files were mapped to a sqlite database using a python script. This allowed querying from the database using sqlalchemy instead of using a library such as pandas. The database was provided in this git repository to aid the person marking the test in running the codebase (I would not normally include a database in a Git repository). The database can be found in the /app directory. As the task did not specify what to do in the case that no date was provided as an endpoint argument, a default date set to the first date present is used in this case. 
 
